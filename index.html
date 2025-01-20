@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NCC VRSEC | Home</title>
     <style>
@@ -11,103 +9,54 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
-        .main_head {
+        header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        .main_head img {
-            max-height: 100px;
-        }
-
-        nav {
-            background-color: #333;
-            padding: 10px 20px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background-color: #555;
-        }
-
-        .image-container {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .image-container img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: opacity 0.5s ease;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        .image-container img.hidden {
-            opacity: 0;
+        .logo {
+            height: 50px;
         }
-
-        .card-area {
-            display: flex;
-            justify-content: center;
-            margin: 20px;
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
         }
-
-        .card-text-area {
-            display: flex;
-            flex-direction: column;
-            margin: 10px;
+        .slideshow-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px 0;
         }
-
-        .card {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin: 10px;
-            text-align: center;
-            cursor: pointer;
+        .slides {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
         }
-
-        .footer-line {
-            text-align: center;
-            padding: 10px;
-            background-color: #f4f4f4;
+        .active {
+            display: block;
         }
     </style>
 </head>
-
 <body>
     <header>
-        <div class="main_head">
-            <img src="images/ncc.png" alt="NCC">
-            <div class="name">
-                <p>Velagapudi Ramakrishna Siddhartha Engineering College</p>
-                <p>(Autonomous)</p>
-                <p>1(A) EME COY NCC UNIT VIJAYAWADA</p>
-            </div>
-            <img src="images/clg logo_.png" alt="VRSEC">
-        </div>
+        <img src="images/ncc.png" alt="NCC Logo" class="logo">
         <nav>
             <a href="index.html">Home</a>
             <a href="act-1.html">Activities</a>
             <a href="gallery.html">Gallery</a>
             <a href="event.html">Event Objective</a>
             <a href="nominal.html">Nominal Roll List</a>
-            <a href="https://docs.google.com/document/d/1XDfVkFXl_uWxm-sBKwL4sPdMD9WTs0_o/edit">Placed In</a>
+            <a href="https://docs.google.com/document/d/1XDfVkFXl_uWxm-sBKwL4sPdMD9WTs0_o/edit?usp=drive_link&ouid=109107171384981884188&rtpof=true&sd=true">Placed In</a>
             <a href="ano.html">About ANO's</a>
             <a href="an-pro.html">ANO Promotions</a>
             <a href="unit.html">Unit Staff</a>
@@ -115,48 +64,23 @@
             <a href="https://docs.google.com/document/d/1YvwvYuQLHG5q8rpfbKNdxHUTSmnemPCB/edit">NCC Results</a>
             <a href="suo.html">SUO & JUO</a>
         </nav>
+        <img src="images/clg_logo.png" alt="VRSEC Logo" class="logo">
     </header>
 
-    <div class="image-container" onclick="toggleImage()">
-        <img src="images/first-image.jpg" alt="First Image" id="firstImage">
-        <img src="https://drive.google.com/uc?export=view&id=19hxjBVkgpepEsGaKzTHCowWgjuV6Y-QE" alt="Second Image" id="secondImage" class="hidden">
+    <div class="slideshow-container">
+        <img src="images/your_first_image.jpg" class="slides active" alt="First Image">
+        <img src="https://drive.google.com/uc?export=view&id=19hxjBVkgpepEsGaKzTHCowWgjuV6Y-QE" class="slides" alt="Second Image">
     </div>
-
-    <div class="card-area">
-        <div class="card-text-area">
-            <div class="card" id="c1">
-                <h1>Aim</h1>
-            </div>
-            <div class="card" id="c2">
-                <h1>Moto</h1>
-            </div>
-        </div>
-        <div class="card-text-area">
-            <div class="card" id="c3">
-                <h1>Pledge</h1>
-            </div>
-            <div class="card" id="c4">
-                <h1>Brief Note</h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-line">Credits: Made by ANO Capt. Sudarshan & SUO Manohara Krishna Vamsi, VRSEC NCC</div>
 
     <script>
-        function toggleImage() {
-            const firstImage = document.getElementById('firstImage');
-            const secondImage = document.getElementById('secondImage');
+        const slides = document.querySelectorAll('.slides');
+        let currentSlide = 0;
 
-            if (firstImage.classList.contains('hidden')) {
-                firstImage.classList.remove('hidden');
-                secondImage.classList.add('hidden');
-            } else {
-                firstImage.classList.add('hidden');
-                secondImage.classList.remove('hidden');
-            }
-        }
+        slides[currentSlide].addEventListener('click', () => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        });
     </script>
 </body>
-
 </html>
