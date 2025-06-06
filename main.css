@@ -166,7 +166,7 @@ header {
 .vr {
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.8rem; /* Match with .se size */
+    font-size: 2.6rem; /* Match with .se size */
     font-weight: 600;  /* Match weight with .se */
     color: #ffd700;    /* Fixed color code */
     font-family: 'Times New Roman', Times, serif;
@@ -174,13 +174,12 @@ header {
 
 
 .se {
-    font-size: 1rem; /* Reduced from 1.8rem */
+    font-size: 1.8rem;
     text-transform: uppercase;
     font-weight: 600;
-    color: #ffff00; /* Keep yellow or change as needed */
+    color: yellow;
     font-family: 'Times New Roman', Times, serif;
 }
-
 .at {
     text-align: center;
     color: white;
