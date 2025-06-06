@@ -174,10 +174,10 @@ header {
 
 
 .se {
-    font-size: 1.8rem;
+    font-size: 1rem; /* Reduced from 1.8rem */
     text-transform: uppercase;
     font-weight: 600;
-    color: yellow;
+    color: #ffff00; /* Keep yellow or change as needed */
     font-family: 'Times New Roman', Times, serif;
 }
 
