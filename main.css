@@ -166,12 +166,12 @@ header {
 .vr {
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: yellow;
-    stroke: black;
+    font-size: 1.8rem; /* Match with .se size */
+    font-weight: 600;  /* Match weight with .se */
+    color: #ffd700;    /* Fixed color code */
     font-family: 'Times New Roman', Times, serif;
 }
+
 
 .se {
     font-size: 1.8rem;
