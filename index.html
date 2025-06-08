@@ -84,7 +84,7 @@
     </div>
     <div class="popup-4">
     <div class="block-box">
-        <label for="" class="close-btn-3 fas fa-times"></label>
+        <label for="" class="close-btn-4 fas fa-times"></label>
         <h2>Hum Sab Bharatiya Hain</h2>
         <div class="anthem-text">
             <p>
@@ -133,7 +133,7 @@
                 Ha Ha Ha Ek Hai<br>
                 Ho Ho Ho Ek Hai.<br>
                 Hum Sab Bharatiya Hain<br>
-                Hum Sab Bharatiya Hain…
+                Hum Sab Bharatiya Hain
             </p>
         </div>
     </div>
@@ -185,6 +185,11 @@
                 <h1>Brief Note</h1>
             </div>
         </div>
+        <div class="card-text-area">
+            <div class="card" id="c5">
+                 <h1>Patriotic Song</h1>
+        </div>
+    </div>
     </div>
 
     <div class="contact-area">
@@ -216,6 +221,14 @@
         document.querySelector(".close-btn-3").addEventListener("click", function () {
             document.querySelector(".popup-3").style.display = "none"
         })
+        document.getElementById("c5").addEventListener("click", function () {
+            document.querySelector(".popup-4").style.display = "flex"
+        })
+
+        document.querySelector(".close-btn-4").addEventListener("click", function () {
+            document.querySelector(".popup-4").style.display = "none"
+        })
+
     </script>
 
 </body>
